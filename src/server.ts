@@ -10,6 +10,8 @@ const client = new Client({
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildPresences,
   ],
 });
 
@@ -30,4 +32,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (commands[commandName as keyof typeof commands]) {
     commands[commandName as keyof typeof commands].execute(interaction);
   }
+});
+
+client.on(Events.GuildMemberAdd, async (guildMember) => {
+  await guildMember.send("Welcome to the server! 👋");
 });
