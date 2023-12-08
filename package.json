@@ -1,0 +1,25 @@
+{
+  "name": "jhc-discord-bot",
+  "version": "0.0.1",
+  "description": "A Discord Bot for Mayor JHC",
+  "main": "dist/server.ts",
+  "repository": "git@github.com:sirlucasm/jhc-discord-bot.git",
+  "author": "JHC Devs",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsup src/index.ts --minify"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "tsup": "^8.0.1",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  }
+}
